@@ -4,7 +4,9 @@
   "scripts": {
     "install:packages": "npm install --prefix shared --ignore-scripts && npm run build --prefix shared && npm install --prefix server --ignore-scripts && npm install --prefix client --ignore-scripts",
     "postinstall": "npm run install:packages",
+    "predev": "node scripts/resolve-ports.mjs",
     "dev": "npm run build --prefix shared && concurrently -n server,client -c blue,green \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
+    "db:up": "node scripts/resolve-ports.mjs && docker compose up -d db",
     "build": "npm run build --prefix shared && npm run build --prefix server && npm run build --prefix client",
     "typecheck": "npm run typecheck --prefix shared && npm run typecheck --prefix server && npm run typecheck --prefix client"
   },

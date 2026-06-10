@@ -27,13 +27,13 @@ docs/        Architecture and implementation notes
 ```bash
 npm install
 cp .env.example .env
-docker compose up -d db
+npm run db:up
 npm run dev
 ```
 
-Postgres runs on host port **4567** (avoids conflict with a local install on 5432).
+`npm run dev` auto-picks free ports when defaults are taken (Postgres **4567**, server **3000**, client **5173**) and writes them to `.env`. Reuses an existing Postgres on the preferred port when it already accepts `game` / `game`.
 
-Open two browser tabs at `http://localhost:5173`.
+Open the client URL printed in the Vite log (usually `http://localhost:5173`).
 
 ## Controls
 

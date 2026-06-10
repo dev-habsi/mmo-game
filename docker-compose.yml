@@ -6,7 +6,7 @@ services:
       POSTGRES_USER: game
       POSTGRES_PASSWORD: game
     ports:
-      - "4567:5432"
+      - "${POSTGRES_PORT:-4567}:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
       - ./database/schema.sql:/docker-entrypoint-initdb.d/001_schema.sql:ro
