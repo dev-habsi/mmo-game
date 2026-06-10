@@ -16,7 +16,7 @@ export type ServerConfig = {
 export function loadConfig(): ServerConfig {
   return {
     port: Number(process.env.PORT ?? 3000),
-    databaseUrl: process.env.DATABASE_URL ?? "postgres://game:game@localhost:5433/game",
+    databaseUrl: process.env.DATABASE_URL ?? "postgres://game:game@localhost:4567/game",
     clientOrigin: process.env.CLIENT_ORIGIN ?? "http://localhost:5173",
     autoMigrate: process.env.AUTO_MIGRATE !== "false"
   };
