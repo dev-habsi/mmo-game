@@ -26,7 +26,6 @@ docs/        Architecture and implementation notes
 
 ```bash
 npm install
-npm run install:packages
 cp .env.example .env
 docker compose up -d db
 npm run dev
