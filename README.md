@@ -26,9 +26,13 @@ docs/        Architecture and implementation notes
 
 ```bash
 npm install
+npm run install:packages
+cp .env.example .env
 docker compose up -d db
 npm run dev
 ```
+
+Postgres runs on host port **5433** (avoids conflict with a local install on 5432).
 
 Open two browser tabs at `http://localhost:5173`.
 
